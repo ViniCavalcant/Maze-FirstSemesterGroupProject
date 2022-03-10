@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Metro</title>
+    <script src="./js/funcoes.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/dashboardStyle.css">
+</head>
+<!-- body-pd para animar a sidebar pelo JS-->
+
+<body onload="validarSessao()">
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav_brand">
+                    <a href="#" class="menu-toggle">
+                        <span><img src="./css/icon/menu.png" name="menu-outline" class="nav_toggle"
+                                id="nav-toggle"></span>
+                        <span class="nav_logo">Maze</span>
+                    </a>
+                </div>
+                <div class="nav_list">
+                    <a href="#" class="nav_link active">
+                        <span><img src="./css/icon/grafico-renko.png" class="nav_icon"></span>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <span><img src="./css/icon/mortarboard.png" class="nav_icon"></span>
+                        <span class="nav_name">Tutorial</span>
+                    </a>
+
+                    <a href="#" class="nav_link">
+                        <span><img src="./css/icon/gear.png" class="nav_icon"></span>
+                        <span class="nav_name">Configurações</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="./index.html" class="nav_link" onclick="sair()">
+                <span><img src="./css/icon/logout.png" class="nav_icon"></span>
+                <span class="nav_name">Sair</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Div no espaço em branco -> espaço para colocar as proximas partes -->
+
+    <div class="title_cards">
+        <h1>Linhas Parceiras</h1>
+        <div class="div_name_login">
+            <span onloadstart="empresa_login()" id="em_login" class="name_login"></span>
+        </div>
+    </div>
+
+    <div class="cards_container">
+
+        <div class="card_container">
+            <a class="card azul" href="./dashboard_linha_azul.html">
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 1 - Azul.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 1 - Azul
+                    </h4>
+                    <p>
+                        De Tucuruvi à Jabaquara.
+                    </p>
+                </div>
+            </a>
+
+
+            <a class="card verde" href="">
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 2 - Verde.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 2 - Verde
+                    </h4>
+                    <p>
+                        De Vila Madalena à Sacomã.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card vermelha" href="">
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 3 - Vermelha.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 3 - Vermelha
+                    </h4>
+                    <p>
+                        De Palmeiras Barra Funda à Corithians Itaquera.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card amarela" href="">
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 4 - Amarela.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 4 - Amarela
+                    </h4>
+                    <p>
+                        De Luz à Vila Sônia.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card lilas" href="">
+
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 5 - Lilás.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 5 - Lilás
+                    </h4>
+                    <p>
+                        De Capão Redondo à Chácara Klabin.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card rubi" href="">
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 7 - Rubi.jpg" alt="rover">
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 7 - Rubi
+                    </h4>
+                    <p>
+                        De Luz à Jundiaí.
+                    </p>
+                </div>
+            </a>
+
+            <a class="card diamante" href="">
+
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 8 - Diamante.png" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 8 - Diamante
+                    </h4>
+                    <p>
+                        De Julio Prestes à Amador Bueno.
+                    </p>
+                </div>
+            </a>
+
+
+            <a class="card esmeralda" href="">
+
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 9 - Esmeralda.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 9 - Esmeralda
+                    </h4>
+                    <p>
+                        De Osasco à Grajaú.
+                    </p>
+                </div>
+            </a>
+
+
+            <a class="card turquesa" href="">
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 10 - Turquesa.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 10 - Turquesa
+                    </h4>
+                    <p>
+                        De Luz à Rio Grande da Serra.
+                    </p>
+                </div>
+            </a>
+
+
+            <a class="card coral" href="">
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 11 - Coral.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 11 - Coral
+                    </h4>
+                    <p>
+                        De Luz à Estudantes.
+                    </p>
+                </div>
+            </a>
+
+
+            <a class="card safira" href="">
+
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 12 - Safira.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 12 - Safira
+                    </h4>
+                    <p>
+                        Brás à Calmon Viana.
+                    </p>
+                </div>
+            </a>
+
+
+            <a class="card jade" href="">
+
+                <div class="card-header">
+                    <img src="./css/Linhas de Metro/Linha 13 - Jade.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 13 - Jade
+                    </h4>
+                    <p>
+                        De Engenheiro Goulart à Aeroporto - Guarulhos.
+                    </p>
+                </div>
+            </a>
+
+
+            <a style="background-color: #202124; color: #202124;" bclass="card prata" href="">
+
+                <div class="card-header">
+
+                </div>
+                <div class="card-body">
+                    <h4 style="background-color: #202124; color: #202124;">
+                        Linha 15 - Prata
+                    </h4>
+                    <p style="background-color: #202124; color: #202124;">
+                        De Vila Prudente à Hóspital C. Tiradentes.
+                    </p>
+                </div>
+            </a>
+
+            <a style="display: none;" class="card azul" href="#">
+                <div class="card-header">
+                    <img src="../CSS/Linhas de Metro/Linha 1 - Azul.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <h4>
+                        Linha 1 - Azul
+                    </h4>
+                    <p>
+                        De Tucuruvi à Jabaquara.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <!-- MAIN JS -->
+        <script src="./js/dashboard.js"></script>
+</body>
+
+</html>

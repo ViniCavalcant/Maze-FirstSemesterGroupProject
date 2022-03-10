@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <script src="./js/Caljs.js"></script>
+  <link rel="stylesheet" href="./css/Nav&footer.css">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./css/Images/ico_maze.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/indexStyle.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze</title>
+  <script src="./js/funcoes.js"></script>
+</head>
+
+<body>
+  <div class="navigation">
+    <nav class="navMenu">
+      <a style="margin-left: 6%; font-weight: bold;" href="">Inicial</a>
+      <a href="./sobreus.html">Sobre nós</a>
+      <h1>Maze</h1>
+      <a href="./cadastro.html">Cadastro</a>
+      <a href="./dashboard.html" onclick="dashboard()">Dashboard</a>
+      <div class="dot"></div>
+    </nav>
+  </div>
+  <!--                             SOBRE NÓS PRIMEIRA                              -->
+  <div class="abt-us">
+    <div class="container">
+      <div class="text_intro">
+        <h2 class="text_intro_h2">
+          <div>Sobre a Maze</div>
+          <div> Os nossos Dados, para que seu Negócio cresça.</div>
+          <div class="mask">
+            <!-- <span >A Maze,</span> -->
+            <span class="span_intro" data-show>Simples,</span>
+            <span class="span_intro">Transparente,</span>
+            <span class="span_intro">e Inovadora.</span>
+          </div>
+          <a href="../HTML/sobreus.html" class="button_main">Conheça mais sobre a Maze</a>
+        </h2>
+
+      </div>
+
+      <!-- <h1>Sobre a Maze</h1>
+      <p style="font-weight: 500;"> Simples, transparente e inovadora.
+        Os nossos Dados, para que seu Negócio <span style="font-weight: bold;">cresça</span>,
+        para quem quer ver <span style="font-weight: bold;">além</span>.
+      </p> -->
+
+    </div>
+    <div class="logo_img">
+      <img src="./css/Images/maze_logo.png" alt="">
+    </div>
+  </div>
+  </div>
+
+  <div class="stroke_divide">
+    <!--                                LINHAS PARCEIRAS                                 -->
+  </div>
+  <div class="linhas">
+    <div class="container">
+      <div class="linhasTxt">
+        <h1>Linhas parceiras</h1>
+        <p>
+          Clique aqui e conheça as linhas já adquiriram nosso serviço!
+        </p>
+      </div>
+      <div class="linha_img">
+        <img src="./css/Images/linhas.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="stroke_divide"> </div>
+
+  <!---       CALCULADORA         -->
+  <div class="container">
+    <div class="explica_cal">
+      <h3>Estime com base em nossos dados o provável retorno que consiguirá</h3>
+    </div>
+  </div>
+  <div class="calculadora">
+    <div class="container">
+
+      <div class="conta">
+
+        <!--LINHA DO METRO-->
+        <h2>Selecione o nível do fluxo que deseja simular:</h2>
+        <select id="linha" class="select_calc">
+          <option id="linha1" value="Baixo">Baixo</option>
+          <option id="linha2" value="Médio">Médio </option>
+          <option id="linha3" value="Alto">Alto</option>
+        </select>
+
+        <!--PLANO DE ANUNCIO-->
+        <h2>Selecione o plano de anúncio:</h2>
+        <select id="selecao" class="select_calc">
+          <option value="30">Mensal</option>
+          <option value="180">Semestral</option>
+          <option value="365">Anual</option>
+        </select>
+        <a style="height: 44px; width: 24%; cursor: pointer; font-size: 20px;" class="button_login"
+          onclick="fnCalculo()" class="button_login">Estimar</a>
+      </div>
+      <section class="result">
+        <div class="conteudo-resultado" id="resultado">
+          <h1 id="tempo"></h1>
+          <h1 id="resultado"></h1>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="linha_login" class="stroke_divide"> </div>
+
+  <!--                              LOGIN/CADASTRO                                  -->
+
+  <div id="div_login" class="acessar">
+    <div class="container">
+      <div class="login">
+        <h1>Login</h1>
+        <p>Bem vindo! Entre na sua conta para ter acesso a nossos serviços
+          exclusivos!</p>
+      </div>
+
+      <form id="form_login" method="post">
+        <input name="email_login" maxlength="20" id="email_login" type="text" placeholder="E-mail">
+        <input name="senha_login" maxlength="8" id="senha_login" type="password" placeholder="Senha">
+        <div style="cursor: pointer;" onclick="entrar()" class="options">
+          <a class="button_login">Entrar</a>
+      </form>
+
+    </div>
+  </div>
+
+  <div id="div_aguardar" class="loading-div">
+    <img style="height: 50px;"
+      src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" id="loading-gif">
+  </div>
+  </div>
+  <div style="margin-left: 73.5%; color: white;" id="div_erros_login">
+  </div>
+
+  <!--                              Footer                                  -->
+  <div id="main_footer"></div>
+  <footer>
+
+    <ul class="social_icon">
+      <li><a href=""><img src="./css/icon/linkedin-logo.png"></a></li>
+      <li><a href=""><img src="./css/icon/google-logo.png"></a></li>
+      <li><a href=""><img src="./css/icon/facebook-logo.png"></a></li>
+    </ul>
+
+    <ul class="menu_footer">
+      <li><a href="">Início</a></li>
+      <li><a href="">Sobre</a></li>
+      <li><a href="">Maze</a></li>
+      <li><a href="">Login</a></li>
+      <li><a href="">Contato</a></li>
+    </ul>
+
+    <p class="rights_footer"> &#169 2021 Maze Metro | Todos os Direitos Reservados</p>
+  </footer>
+  </main>
+
+</body>
+
+</html>
+<script src="./js/intro_text.js"></script>
+
+<script>
+
+  function limparFormulario() {
+    document.getElementById("form_login").reset();
+  }
+
+  function entrar() {
+    aguardar();
+
+    var emailVar = email_login.value;
+    var senhaVar = senha_login.value;
+
+    // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+    if (emailVar == "" || senhaVar == "") {
+      window.alert("Preencha todos os campos para prosseguir!");
+      finalizarAguardar();
+      return false;
+    }
+
+    if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+      window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+      finalizarAguardar();
+    }
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: emailVar,
+        senha: senhaVar,
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+
+          sessionStorage.EMAIL_USUARIO = json.emailEmpresa;
+          sessionStorage.NOME_USUARIO = json.nomeEmpresa;
+          sessionStorage.ID_USUARIO = json.idEmpresa;
+
+          setTimeout(function () {
+            window.location = "./dashboard.html";
+          }, 1000); // apenas para exibir o loading
+
+        });
+
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+          console.error(texto);
+          finalizarAguardar(texto);
+        });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
+</script>

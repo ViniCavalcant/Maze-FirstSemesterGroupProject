@@ -1,0 +1,441 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+
+/*Variaveis CSS - Pré definições da pagina*/
+:root
+{--bg-color: #202124;
+--bg-color-lighter: #3B3D3F;
+--white-color: #FFF;
+--green-strong: #4ADAA8;
+--text-color-secondary: #69B99D;
+
+/* Fonts */
+--body-font: 'Spartan', sans-serif;
+--normal-font-size: 16px;
+--small-font-size: 14px;
+--nav-width: 92px;
+
+
+/* CARDS */
+--card-color-azul: #2c6ff7;
+
+--card-color-verde: #61d897;
+
+--card-color-vermelha: #EF3131;
+
+--card-color-amarela: #8FFF00;
+
+--card-color-lilas: #C8A2C8;
+
+--card-color-rubi: #860f29;
+
+--card-color-diamante: #DCEDEC;
+
+--card-color-esmeralda: #50C878;
+
+--card-color-turquesa: #40E0D0;
+
+--card-color-coral: #FF7F50;
+
+--card-color-safira: #36639b;
+
+--card-color-jade: #00a86b;
+
+--card-color-prata: #c0c0c0;
+/* z index é um elemento de empilhamento, logo um numero superior fica a frente de um numero inferior (trabalha com o eixo z) */
+
+--z-fixed: 100;
+}
+
+/* BASE */
+*,::before,::after{
+  box-sizing: border-box;
+}
+body{
+  position: relative;
+  margin: 0;
+  padding: 0px 0 0 93px;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font: 400 1rem 'DM Sans', sans-serif;
+  color: var(--green-strong);
+  background-color: var(--bg-color);
+  transition: 0.5s;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-color);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--green-strong);    /* color of the scroll thumb */
+  border-radius: 2px;
+  width: 5px;       /* roundness of the scroll thumb */
+  }
+
+h1{
+  margin: 0;
+  font-family: 'Spartan', sans-serif;
+  color: var(--white-color);
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+span {
+  font-family: 'Spartan', sans-serif;
+}
+
+/* l NAV é a class que contem todos os filhos (elementos) */
+.l-navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--bg-color-lighter);
+  color: var(--white-color);
+  padding: 24px 24px 32px;
+  transition: 0.5s;
+  z-index: var(--z-fixed);
+}
+
+/* NAV é a class que contem todos os filhos - Porém adiciona espaçamento para deparar os icones das spans */
+.nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/*div pai do icone menu e texto Maze*/
+.nav_brand{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+/*class - a href do icone menu e texto Maze */
+.menu-toggle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  font-size: 24px;
+  width: 256px;
+}
+
+/*id e class - a href do icone menu e texto Maze */
+.menu-toggle, 
+.nav_toggle{
+  display: flex;
+  justify-content: space-between;
+}
+
+/*id - a href do icone menu e texto Maze */
+.nav_toggle{
+  cursor: pointer;
+  font-size: 20px;
+  width: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.nav_logo{
+  color: var(--white-color);
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+.nav_link{
+  display: flex;
+  grid-template-columns: max-content;
+  align-items: center;
+  column-gap: 12px;
+  padding: 12px;
+  color: var(--white-color);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav_link:hover{
+  background-color: var(--green-strong);
+  transition: 0.5s;
+}
+
+.nav_icon{
+  font-size: 20px;
+  width: 24px;
+}
+
+.nav_name{
+  font-size: var(--small-font-size);
+}
+
+/* Expande o menu/sidebar */
+.expander{
+  width: calc(var(--nav-width) + 148px);
+}
+
+/* Adicona padding ao body */
+.body-pd{
+  padding: 32px 0 0 108px;
+}
+
+/* Active links menu */
+.active{
+  background-color: var(--green-strong);
+}
+
+/* CONTEUDO DA DASHBOARD */
+
+/* CARDS */
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/*====  RESET ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
+  color:var(--green-strong);
+  font-size: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+/* ====  BASE ============================ */
+#home .text {
+  order: 0;
+  max-width: 420px;
+  text-align: left;
+}
+
+#home .text h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+#home .text p {
+  margin-bottom: 32px;
+  color: white;
+  font-size: 22px;
+}
+
+#home .button {
+  text-align: center;
+  font-weight: bold;
+}
+
+.containernav{
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  padding: 1.2%;
+  height: 70px;
+}
+
+.containernav .gridnav #header_logo{
+  background-color: var(--bg-color);
+  font-weight: 1000;
+  font-size: 26px;
+  margin-top: 0.5%;
+}
+
+.containernav .gridnav .title{
+  background-color: var(--bg-color);
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.gridnav{   
+  font-weight: 500;
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  margin-top: 0.5%;
+  width: 80%;
+  list-style: none;
+}
+
+/* CORPO */ 
+.cointainer{
+  display: flex;
+  width: 70%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+/*cards*/
+
+.title_cards{
+  display: flex;
+  justify-content: space-between;
+}
+
+.title_cards h1{
+  margin: 16px 16px;
+  font-family: var(--body-font);
+}
+.title_cards span{
+  margin: 16px 16px;
+  font-family: var(--body-font);
+}
+
+.div_name_login{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 5px;
+}
+
+.name_login {
+  display: flex;
+  background-color: var(--green-strong);
+  text-align: center;
+  color: var(--white-color);
+  align-items: center;
+  justify-content: center;
+  width: 165px;
+  border-radius: 5px
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+.cards_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  color: #10182f;
+}
+.card_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card {
+  margin: 10px;
+  background-color: var(--bg-color-lighter);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 160px;
+  height: 225px;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  transition: 0.8s;
+  -webkit-filter: drop-shadow(5px 5px 2.5px rgba(0,0,0,.3));
+  filter: drop-shadow(5px 5px 2.5px rgba(0,0,0,.3));
+}
+
+.card-header img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.card-body p {
+  color: var(--white-color);
+  font-size: 13px;
+  margin: 0 0 40px;
+}
+
+.card-body h4 {
+  font-size: 13px;
+  margin: 0 0 16px;
+  color: var(--green-strong);
+}
+
+/* TITTLE CARDS COLORS */
+
+.azul h4{
+  color: var(--card-color-azul);
+}
+
+.verde h4{
+  color: var(--card-color-verde);
+}
+
+.vermelha h4{
+  color: var(--card-color-vermelha);
+}
+
+.amarela h4{
+  color: var(--card-color-amarela);
+}
+
+.lilas h4{
+  color: var(--card-color-lilas);
+}
+
+.rubi h4{
+  color: var(--card-color-rubi);
+}
+
+.diamante h4{
+ color: var(--card-color-diamante);
+}
+
+.esmeralda h4{
+  color: var(--card-color-esmeralda);
+}
+
+.turquesa h4{
+  color: var(--card-color-turquesa);
+}
+
+.coral h4{
+  color: var(--card-color-coral);
+}
+
+.safira h4{
+  color: var(--card-color-safira);
+}
+
+.jade h4{
+  color: var(--card-color-jade);
+}
+
+.prata h4{
+ color: var(--card-color-prata);
+}

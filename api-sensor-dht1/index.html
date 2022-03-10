@@ -1,0 +1,153 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<title>Line Chart</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+	<!-- <style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style> -->
+</head>
+
+<body>
+	<div style="height: 50vh">
+		<section>
+            <h1>Sensor LM35 - Temperatura</h1>
+			<h2>Média: <label id='average'>0.00</label></h2>
+		</section>
+			<section style="width:50%; height: 80%">
+				<canvas id="chart"></canvas>
+			</section>
+	</div>
+	<div style="height: 50vh">
+		<section>
+			<h1>Sensor DHT11 - Umidade</h1>
+			<h2>Média: <label id='averageHumidity'>0.00</label></h2>
+		</section>
+		<section style="width:50%; height: 80%">
+			<canvas id="chart-humidity"></canvas>
+		</section>
+	</div>
+	<div style="height: 50vh">
+		<section>
+            <h1>Sensor Presença (TCRT5000) </h1>
+			<h2>Média: <label id='averageSwitch'>0.00</label></h2>
+			</section>
+			<section style="width:50%; height: 80%">
+				<canvas id="chart-switch"></canvas>
+			</section>
+	</div>
+	<div style="height: 50vh">
+		<section>
+			<h1>Sensor Luminosidade (LDR5)</h1>
+			<h2>Média: <label id='averageLux'>0.00</label></h2>
+		</section>
+		<section style="width:50%; height: 80%">
+			<canvas id="chart-lux"></canvas>
+		</section>
+	</div>
+
+
+	<script>
+
+/**
+ * Terceiro gráfico Presença
+ **/
+
+ 		var context3 = document.getElementById("chart-switch").getContext("2d");
+		 context3.canvas.width = 1000;
+		 context3.canvas.height = 300;
+
+		var chave = {
+			type: 'bar',
+			data: {
+				datasets: [{
+					label: "Presença x Tempo",
+					type: 'bar',
+					borderColor: ['#3232ff'],
+					backgroundColor: ['#043927']
+				}]
+			},
+			options: {
+				scales: {
+					xAxes: [{
+						distribution: 'series',
+                        ticks: {
+                            beginAtZero:true
+                        }
+					}],
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'Switch'
+                        },
+                        ticks: {
+                            beginAtZero:true
+                        }
+					}]
+				},
+				animation: {
+					duration: 0
+				}
+			}
+        };
+        
+		var chartSwitch = new Chart(context3, chave);
+
+        this.lastIndexSwitch = 0;
+        this.timeSwitch = 0;
+
+        function get_dataSwitch(){
+
+            var http = new XMLHttpRequest();
+            http.open('GET', 'http://localhost:3000/api/chave', false);
+            http.send(null);        
+			
+            var obj = JSON.parse(http.responseText);
+            if (obj.data.length == 0){
+                return;
+            }
+
+            var _lastIndexSwitch = this.lastIndexSwitch;
+            this.lastIndexSwitch = obj.data.length;
+            listTemp = obj.data.slice(_lastIndexSwitch);
+
+            listTemp.forEach(data => {
+                if (chartSwitch.data.labels.length == 10 && chartSwitch.data.datasets[0].data.length == 10){
+                    chartSwitch.data.labels.shift();
+                    chartSwitch.data.datasets[0].data.shift();
+                }
+
+                chartSwitch.data.labels.push(this.time++);
+                chartSwitch.data.datasets[0].data.push(parseFloat(data));
+                chartSwitch.update();
+			});
+			
+			document.getElementById('averageSwitch').textContent = obj.average;
+		} 
+		
+		get_dataSwitch();
+
+
+		function sendData(){
+			var http = new XMLHttpRequest();
+			http.open('POST','http://localhost:3000/api/sendData', false);
+			//open(metodo,url[,async[,user[,password]]])
+			http.send(null);
+		}
+
+        setInterval(() => {
+			get_dataSwitch();
+			sendData();
+		}, 5000);
+	</script>
+</body>
+
+</html>

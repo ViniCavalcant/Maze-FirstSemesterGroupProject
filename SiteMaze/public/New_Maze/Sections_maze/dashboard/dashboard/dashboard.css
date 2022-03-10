@@ -1,0 +1,254 @@
+/* FONTE */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+:root
+{--bg-color: #202124;
+--bg-color-lighter: #3B3D3F;
+--white-color: #FFF;
+--green-strong: #4ADAA8;
+--text-color-secondary: #69B99D;
+}
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+h3{
+  color: white;
+}
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+i {
+font-size: 30px;
+padding-top: 7px;
+}
+
+li a {
+    list-style: none;
+    text-decoration: none;
+}
+body{
+  padding: 0;
+  margin: 0;
+  background: var(--bg-color);
+}
+
+.main-menu:hover,nav.main-menu.expanded {
+width:250px;
+
+}
+.main-menu {
+height: 100vh;
+position: fixed;
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+justify-content: space-evenly;
+background:var(--green-strong);
+left:0;
+top:0;
+bottom:0;
+padding-left: 1%;
+width:60px;
+overflow:hidden;
+transition:width .09s linear;
+z-index:1000;
+}
+
+.year{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 500px;
+  padding: 1%;
+
+}
+
+.year_graph{
+  width: 86%;
+  padding: 1%;
+  height: 480px;
+  border-radius: 4px;
+  -webkit-box-shadow: -1px -2px 26px 1px rgba(0,0,0,0.49); 
+  box-shadow: -1px -2px 26px 1px rgba(0,0,0,0.49);
+  
+}
+.main-menu li {
+position:relative;
+margin-top: 35px;
+list-style: none;
+width:250px;
+}
+
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#202124;
+font-size: 14px;
+transition:all .1s linear;
+  
+}
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+font-size: 17px;
+padding: 12px;
+font-weight: 400;
+vertical-align:middle;
+width:200px;
+font-family: 'Titillium Web', sans-serif;
+}
+
+.main-menu>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+}
+
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:var(--green-strong);
+background-color:var(--bg-color);
+border-bottom-left-radius: 7px;
+border-top-left-radius: 7px;
+}
+.container{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+}
+
+.options{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 160px;
+  width: 70%;
+
+}
+.options .card{
+  background: var(--bg-color-lighter);
+  height: 95%;
+  width: 18%;
+  border: 1px solid var(--green-strong);
+}
+.card{
+  display: flex;
+  padding: 0.2%;
+  justify-content: space-between;
+  flex-direction: column;
+  -webkit-box-shadow: -1px -2px 26px 1px rgba(0,0,0,0.49); 
+  box-shadow: -1px -2px 26px 1px rgba(0,0,0,0.49);
+  border-radius: 4px;
+}
+.card h1{
+  font-size: 27px;
+  
+}
+
+.card h3, h1, h4{
+  color: var(--green-strong);
+}
+.card .result{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .title{
+  padding: 4%;
+}
+.total{
+  display: flex;
+  justify-content: space-between;
+}
+.dash_space{
+    display: flex;
+    justify-content: space-evenly;
+    height: 400px;
+   
+
+}
+.graphs{
+  padding-top: 5%;
+  height: 100%;
+  width: 40%;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 40%;
+
+
+}
+
+
+
+/* CSS */
+.button-59 {
+  align-items: center;
+  background-color: var(--bg-color-lighter);
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: var(--green-strong);
+  cursor: pointer;
+  display: inline-flex;
+  fill: var(--green-strong);
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 30px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  width: 20%;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: var(--green-strong);
+}
+
+.button-59:hover {
+  border-color: var(--green-strong);
+  color: white;
+  fill: var(--green-strong);
+}
+
+.button-59:active {
+  border-color: var(--green-strong);
+  color: var(--green-strong);
+  fill: var(--green-strong);
+}
+.All_dash_space{
+  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    height: 400px;
+   
+
+
+}
+

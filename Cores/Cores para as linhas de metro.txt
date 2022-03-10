@@ -1,0 +1,21 @@
+Linhas Parceiras
+
+	Linha 1 - Azul: #0356F8
+
+	Linha 2 -  Verde: #69B99D
+
+	Linha 3 - Vermelha: #EF3131
+
+	Linha 4 - Amarela: #8FFF00
+
+	Linha 5 - Lilás: #C8A2C8
+
+	Linha 7 - Rubi: #9B111B
+
+	Linha 8 - Diamante: #DCEDEC
+
+	Linha 9 - Esmeralda: #50C878
+
+	Linha 10 - Turquesa: #40E0D0
+
+	Linha 11 - Coral: #FF7F50

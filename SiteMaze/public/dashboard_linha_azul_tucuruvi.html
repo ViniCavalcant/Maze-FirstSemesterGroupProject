@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze Metro</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/dashboard_linha_azul_tucuruvi.css">
+
+  <!-- JS CANVAS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+  <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+  <script src="./js/dashboards_azul.js"></script>
+  <style>
+    canvas {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+</head>
+<!-- body-pd para animar a sidebar pelo JS-->
+
+<body>
+  <div class="l-navbar" id="navbar">
+    <nav class="nav">
+      <div>
+        <div class="nav_brand">
+          <a href="#" class="menu-toggle">
+            <span><img src="./css/icon/menu.png" name="menu-outline" class="nav_toggle" id="nav-toggle"></span>
+            <span href="#" class="nav_logo">Maze</span>
+          </a>
+        </div>
+        <div class="nav_list">
+          <a href="./dashboard.html" class="nav_link active">
+            <span><img src="./css/icon/grafico-renko.png" class="nav_icon"></span>
+            <span class="nav_name">Dashboard</span>
+          </a>
+          <a href="./dashboard_linha_azul.html" class="nav_link">
+            <span><img src="./css/icon/return.png" class="nav_icon"></span>
+            <span class="nav_name">Anterior</span>
+          </a>
+          <details>
+            <summary>Opções</summary> <br>
+            <div class="scrollTeste">
+
+              <a class="a_line_linha_azul" href="#">
+                <div class="blue_line" onclick="tucuruvi()">Tucuruvi</div>
+              </a>
+              <a class="a_line_linha_azul" href="#">
+                <div class="blue_line" onclick="parada()">Parada Inglesa</div>
+              </a>
+              <a class="a_line_linha_azul" href="#">
+                <div class="blue_line">Jardim São Paulo</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Santana</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Carandiru</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Portuguesa-Tietê</div>
+              </a>
+
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Armênia</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Tiradentes</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Luz</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">São Bento</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Sé</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Liberdade</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">São Joaquim</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Vergueiro</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Paraiso</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Ana Rosa</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Vila Mariana</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Santa Cruz</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Praça da Árvore</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Saúde</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">São Judas</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Conceição</div>
+              </a>
+              <a class="a_line_linha_azul" href="./dashboard.html">
+                <div class="blue_line">Jabaquara</div>
+              </a>
+            </div>
+          </details>
+
+
+
+        </div>
+      </div>
+
+      <a href="./index.html" class="nav_link">
+        <span><img src="./css/icon/logout.png" class="nav_icon" onclick="sair()"></span>
+        <span class="nav_name">Sair</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Div no espaço em branco -> espaço para colocar as proximas partes -->
+  <div class="title_dash">
+    <h1>Linha 1 - Azul > <span id='nome_linha'>Tucuruvi</span></h1>
+    <div class="content_linha_azul">
+
+    </div>
+  </div>
+
+  <div class="dash_space">
+
+
+    <!-- GRAFICO -->
+
+    <div id='grafico_1'>
+      <canvas id="chart"> </canvas>
+    </div>
+
+
+
+
+    <!-- GRAFICO -->
+    <!-- <div id='grafico_4'>
+          <canvas id="chart_4" > </canvas>
+        </div> -->
+
+    <div id='grafico_2'>
+      <canvas id="chart_2"> </canvas>
+    </div>
+
+
+    <div id='grafico_3'>
+      <canvas id="chart_3"> </canvas>
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <span onclick="obterDadosGrafico(1)"></span>
+
+  <!-- MAIN JS -->
+  <script src="./js/dashboard.js"></script>
+</body>
+
+</html>
+
+<script>
+  let proximaAtualizacao;
+  // Referenciando a tag canvas e defininco que o gráfico será em 2d
+
+  var context = document.getElementById("chart").getContext("2d");
+
+  // configurando todo o corpo do gráfico, as colunas, linhas, valores, etc
+  var configuration = {
+    type: 'line',
+    data: {
+      labels: ["Nov", "Dez",'Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out'],
+      datasets: [{
+        label: ["volume de pessoas"],
+        data: ["340000", "62000",],
+        type: 'line',
+        borderColor: ['#00f01f'],
+        backgroundColor: ['#00f01f0b'],
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          barPercentage: .7,
+          distribution: 'series',
+          ticks: {
+            beginAtZero: true,
+            fontColor: "#4ADAA8",
+            drawBorder: false,
+          },
+
+          gridLines: {
+            color: ["#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D"],
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Meses do ano',
+            fontColor: "#4ADAA8"
+          }
+
+        }],
+        yAxes: [{
+          gridLines: {
+              },
+          scaleLabel: {
+            fontColor: "#4ADAA8",
+            display: true,
+            labelString: 'Número de pesssoas',
+          }
+        }],
+
+      },
+    }
+  };
+
+  //adicionando esses valores a um novo gráfico na tag canvas
+  var chart = new Chart(context, configuration);
+
+
+  // SEGUNDO GRÁFICO
+
+  // Referenciando a tag canvas e defininco que o gráfico será em 2d
+
+  var context_2 = document.getElementById("chart_2").getContext("2d");
+
+  // configurando todo o corpo do gráfico, as colunas, linhas, valores, etc
+  var configuration_2 = {
+    type: 'bar',
+    data: {
+      labels: ["01", "02", "03"],
+       datasets: [{
+        label: ["volume de pessoas"],
+        data: ["28000", "34000",''],
+        type: 'bar',
+        borderColor: ['#00f01f'],
+        backgroundColor: ['#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f'],
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          barPercentage: .7,
+          distribution: 'series',
+          ticks: {
+            beginAtZero: true,
+            fontColor: "#4ADAA8",
+            drawBorder: false,
+          },
+
+          gridLines: {
+            color: ["#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D"],
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Dias',
+            fontColor: "#4ADAA8"
+          }
+
+        }],
+        yAxes: [{
+          gridLines: {
+      },
+          scaleLabel: {
+            fontColor: "#4ADAA8",
+            display: true,
+            labelString: 'Número de pesssoas',
+          }
+        }],
+
+      },
+    }
+  };
+
+  //adicionando esses valores a um novo gráfico na tag canvas
+  var chart_2 = new Chart(context_2, configuration_2);
+
+  // TERCEIRO GRÁFICO
+
+  // Referenciando a tag canvas e defininco que o gráfico será em 2d
+
+  obterDadosGrafico(1)
+
+  function obterDadosGrafico(idAquario) {
+    if (proximaAtualizacao != undefined) {
+      clearTimeout(proximaAtualizacao);
+    }
+
+    fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          plotarGrafico(resposta, idAquario);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  }
+
+  function plotarGrafico(resposta, idAquario) {
+    console.log('iniciando plotagem do gráfico...');
+
+    var dados = {
+      labels: [],
+      datasets: [
+        {
+
+          label: 'Presença',
+          borderColor: '#00f01f',
+          backgroundColor: ['1', '2', '3', '4', '5', '6', '7'],
+          fill: true,
+          data: []
+        }
+      ]
+    };
+
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      dados.labels.push(registro.momento_grafico);
+      dados.datasets[0].data.push(registro.resultado);
+    }
+
+    console.log(JSON.stringify(dados));
+
+    var context_3 = chart_3.getContext("2d");
+    window.grafico_linha = Chart.Bar(context_3, {
+      data: dados,
+      //Configurações do gráfico
+      options: {
+        responsive: true,
+        animation: { duration: 500 },
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+          display: true,
+          text: 'Histórico recente de presença'
+        },
+        scales: {
+          yAxes: [{
+            type: 'linear',
+            display: true,
+            position: 'left',
+            id: 'y-temperatura',
+          }, {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            id: 'y-umidade',
+
+            gridLines: {
+              drawOnChartArea: false,
+            },
+          }],
+        }
+      }
+    });
+
+    //Atualiza os dados de 2 em 2 segundos
+    setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+  }
+  var i1 = ""
+  var i2 = ""
+  var i3 = ""
+  var i4 = ""
+  var i5 = ""
+  var i6 = ""
+  var i7 = ""
+  var i8 = ""
+  var i9 = ""
+  var i10 = ""
+  var i11 = ""
+  var i12 = ""
+  var i13 = ""
+  var i14 = ""
+  var i15 = ""
+  var i16 = ""
+  var i17 = ""
+  var i18 = ""
+  var i19 = ""
+  var i20 = ""
+  var i21 = ""
+  var i22 = ""
+  var i23 = ""
+  // só mexer se quiser alterar o tempo de atualização
+  // ou se souber o que está fazendo!
+
+  // só mexer se quiser alterar o tempo de atualização
+  // ou se souber o que está fazendo!
+  function atualizarGrafico(idAquario, dados) {
+    fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+          console.log(`Dados atuais do gráfico: ${dados}`);
+
+          // tirando e colocando valores no gráfico
+          dados.labels.shift(); // apagar o primeiro
+          dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+          dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+          dados.datasets[0].data.push(novoRegistro[0].is_present * 25); // incluir uma nova medida de umidade
+
+          dados.datasets[0].backgroundColor[22] = i1
+          dados.datasets[0].backgroundColor[21] = i2
+          dados.datasets[0].backgroundColor[20] = i3
+          dados.datasets[0].backgroundColor[19] = i4
+          dados.datasets[0].backgroundColor[18] = i5
+          dados.datasets[0].backgroundColor[17] = i6
+          dados.datasets[0].backgroundColor[16] = i7
+          dados.datasets[0].backgroundColor[15] = i8
+          dados.datasets[0].backgroundColor[14] = i9
+          dados.datasets[0].backgroundColor[13] = i10
+          dados.datasets[0].backgroundColor[12] = i11
+          dados.datasets[0].backgroundColor[11] = i12
+          dados.datasets[0].backgroundColor[10] = i13
+          dados.datasets[0].backgroundColor[9] = i14
+          dados.datasets[0].backgroundColor[8] = i15
+          dados.datasets[0].backgroundColor[7] = i16
+          dados.datasets[0].backgroundColor[6] = i17
+          dados.datasets[0].backgroundColor[5] = i18
+          dados.datasets[0].backgroundColor[4] = i19
+          dados.datasets[0].backgroundColor[3] = i20
+          dados.datasets[0].backgroundColor[2] = i21
+          dados.datasets[0].backgroundColor[1] = i22
+          dados.datasets[0].backgroundColor[0] = i23
+
+          i23 = i22
+          i22 = i21
+          i21 = i20
+          i20 = i19
+          i19 = i18
+          i18 = i17
+          i17 = i16
+          i16 = i15
+          i15 = i14
+          i14 = i13
+          i13 = i12
+          i12 = i11
+          i11 = i10
+          i10 = i9
+          i9 = i8
+          i8 = i7
+          i7 = i6
+          i6 = i5
+          i5 = i4
+          i4 = i3
+          i3 = i2
+          i2 = i1
+          if (novoRegistro[0].is_present > 300) {
+            i1 = "#118547"
+            dados.datasets[0].backgroundColor[23] = i1
+          } else if (novoRegistro[0].is_present > 250) {
+            i1 = "#00f01f"
+            dados.datasets[0].backgroundColor[23] = i1
+          } else if (novoRegistro[0].is_present > 200) {
+            i1 = "#eef414"
+            dados.datasets[0].backgroundColor[23] = i1
+          }
+          else if (novoRegistro[0].is_present > 150) {
+            i1 = "#FFA500"
+            dados.datasets[0].backgroundColor[23] = i1
+          }
+          else {
+            i1 = "#d3000d"
+            dados.datasets[0].backgroundColor[23] = i1
+          }
+
+          window.grafico_linha.update();
+
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 5000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 5000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  }
+
+</script>

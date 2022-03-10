@@ -1,0 +1,16 @@
+
+	Cores de fundo do site:
+
+ Cor de Fundo Primaria: #222324 - (Escura);
+
+ Cor de Fundo Secundaria: #2B2C2D - (Clara, pórem não mais que a Terciaria);
+
+ Cor de Fundo Terciaria: #3B3D3F - (Mais clara).
+
+_____________________________________________________________________________
+
+	Cor para os Textos do Site
+
+ Cor de Titulo: #69B99D - (Verde Escuro);
+	
+ Cor de Texto: #4ADAA8 - (Verde Claro).

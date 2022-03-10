@@ -1,0 +1,176 @@
+/**************   OPÇÕES GERAIS                 *************************/
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    /* Colors */
+    --bg-color: #202124;
+    --bg-color-lighter: #3B3D3F;
+    --white-color: #FFF;
+    --green-strong: #4ADAA8;
+    --text-color-secondary: #2ED49A;
+    
+    /* Fonts */
+    --body-font: 'Spartan', sans-serif;
+    --normal-font-size: 16px;
+    --small-font-size: 14px;
+  }
+a{
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+}
+
+.navbar, .nav, .menu {
+    display: flex;
+  
+  }
+  
+  .contNav{
+  
+    position: fixed;
+    z-index: 1000;
+  }
+  .navh1{
+    font-size: 24px;
+    height: 30px;
+    color: var(--bg-color);
+  }
+  .nav {
+    display: flex;
+    margin-left: 4%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding: 2px;
+    padding-left: 3px;
+    padding-top: 5px;
+    border-radius: 0 0 5px 5px;
+    background-color: var(--green-strong);
+    
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    width: 700px;
+   
+  }
+body{
+    background-color: var(--bg-color);
+    font-family: 'Spartan', sans-serif;
+    color: white;
+}      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        var(--bg-color),
+        var(--text-color-secondary)
+    );
+    left: -120px;
+    top: -60px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        var(--bg-color),
+        var(--green-strong)
+    );
+    right: -100px;
+    bottom: -40px;
+}
+#form_login{
+    margin-top: 1%;
+    height: 570px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 20px 35px;
+}
+#form_login *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+#form_login  h3{
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 42px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 20px;
+    width: 100%;
+    content: "Cadastrar";
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loading-div {
+    width: 50px;
+    /* border: 3px solid pink; */
+    margin: auto;
+    display: none;
+  }
+  

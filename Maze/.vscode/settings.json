@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6d6caf48-fa02-4cbf-a865-39cdcc270ffe/resourceGroups/Maze/providers/Microsoft.Web/sites/amazein",
+    "appService.deploySubpath": "."
+}

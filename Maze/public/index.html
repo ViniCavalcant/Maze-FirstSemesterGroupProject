@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/Nav&footer.css">
+  <link rel="stylesheet" href="./css/pattern.css">
+  <link rel="shortcut icon" href="./css/Images/maze/ico_maze.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze</title>
+
+</head>
+
+<body>
+  <div class="contNav">
+    <div class="navbar">
+      <div class="nav">
+
+        <h1 class="navh1">Maze</h1>
+
+        <div class="menu">
+          <li><a href="./plans.html">Login</a></li>
+          <li><a href="./plans.html">Planos</a></li>
+          <li><a href="./linhas.html">Dashboards</a></li>
+          <li><a href="./sobreUs.html">Sobre nós</a></li>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="about_maze">
+    <div class="about_content section_content">
+      <div class="text_intro">
+        <h1 class="text_intro_h1">
+          <div class="title">Sobre a Maze</div>
+          <div class="subtitle"> Os nossos Dados, para que seu Negócio cresça de forma...</div>
+          <div class="mask">
+            <!-- <span >A Maze,</span> -->
+            <span data-show>Simples,</span>
+            <span>Transparente,</span>
+            <span>e Inovadora.</span>
+          </div>
+        </h1>
+      </div>
+      <div class="secundary_content">
+        <img class="logo_maze" src="./css/Images/maze/maze_logo.png" alt="">
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="text_milhoes">
+    <div class="mid_section section_content">
+      <div>
+        <img class="metro_image" src="./css/Images/icons/pexels-gustavo-juliette-4485867 1.png" alt="">
+      </div>
+      <div class="talk">
+        <h4>A Maze possibilita que seu negócio consiga ser visto e publicado em tempo real.</h4>
+        <a class="teste" href="javascript:;">
+          <svg class="icon-arrow before">
+            <use xlink:href="#arrow"></use>
+          </svg>
+          <span class="label">Clique e conheça</span>
+          <svg class="icon-arrow after">
+            <use xlink:href="#arrow"></use>
+          </svg>
+        </a>
+
+        <svg>
+          <defs>
+            <symbol id="arrow" viewBox="0 0 35 15">
+              <title>Arrow</title>
+              <path d="M27.172 5L25 2.828 27.828 0 34.9 7.071l-7.07 7.071L25 11.314 27.314 9H0V5h27.172z " />
+            </symbol>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="text_passengers">
+    <div class="content_text_passengers">
+      <h1>
+        4 MILHÕES
+      </h1>
+      <span>
+        De passageiros são transportados todos os dias nas linhas administradas pelo Metrô.
+      </span>
+    </div>
+
+  </section>
+
+
+
+  <section class="cards_section">
+    <h1 class="title_card_section">A Maze tem como seus principais pilates.</h1>
+    <div class="body_cards">
+      <div class="card">
+        <div class="content">
+          <h1>Visibilidade</h1>
+          <p>
+            Com nossa tecnologia, é possível visualizar os lugares certos para se investir em marketing no transporte
+            mais utlizado de São Paulo.​
+          </p>
+        </div>
+        <img src="./css/Images/icons/alta-visibilidade 1.png" alt="">
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <h1>Segurança</h1>
+          <p>
+            Não é necessário arriscar em investimentos incertos​.
+          </p>
+        </div>
+        <img src="./css/Images/icons/escudo 1.png" alt="">
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <h1>Transparência</h1>
+          <p>
+            Nós da Maze acreditamos que a transparência com nossos clientes é uma peça fundamental para um negócio​.
+          </p>
+        </div>
+        <img src="./css/Images/icons/display 1.png" alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- linhas parceiras -->
+  <section class="partner_lines">
+    <div class="linhas">
+      <div class="container_lines">
+        <div class="linhasTxt">
+          <h1>Linhas parceiras</h1>
+          <p>
+            Clique aqui e conheça as linhas e estações que já possuem nossa tecnologia.
+          </p>
+        </div>
+        <div class="linha_img">
+          <img src="./css/Images/maze/linhas.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section_calculadora">
+    <div class="calculadora_content">
+      <div style="height: 100px;">
+        <div style="height: 100px;" class="explica_cal">
+          <h3>Estime com base em nossos dados o provável retorno que consiguirá</h3>
+        </div>
+      </div>
+      <div class="calculadora">
+        <div class="container">
+
+          <div class="conta">
+
+            <!--LINHA DO METRO-->
+            <h2>Selecione o nível do fluxo que deseja simular:</h2>
+            <select id="linha" class="select_calc">
+              <option id="linha1" value="Baixo">Baixo</option>
+              <option id="linha2" value="Médio">Médio </option>
+              <option id="linha3" value="Alto">Alto</option>
+            </select>
+
+            <!--PLANO DE ANUNCIO-->
+            <h2>Selecione o plano de anúncio:</h2>
+            <select id="selecao" class="select_calc">
+              <option value="30">Mensal</option>
+              <option value="180">Semestral</option>
+              <option value="365">Anual</option>
+            </select>
+            <a style="height: 44px; width: 24%; cursor: pointer; font-size: 20px;" class="button_login"
+              onclick="fnCalculo()" class="button_login">Estimar</a>
+          </div>
+          <div class="result">
+            <div class="conteudo-resultado" id="resultado">
+              <h1 id="tempo"></h1>
+              <h1 id="resultado"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="div_login" class="acessar">
+    <div class="containerLog">
+      <div class="login">
+        <h1 style="color: white;">Login</h1>
+        <p>Bem vindo! Entre na sua conta para ter acesso a nossos serviços
+          exclusivos!</p>
+      </div>
+
+      <form id="form_login" method="post">
+        <input name="email_login" maxlength="20" id="email_login" type="text" placeholder="E-mail">
+        <input name="senha_login" maxlength="8" id="senha_login" type="password" placeholder="Senha">
+        <div style="cursor: pointer;" onclick="entrar()" class="options">
+          <a class="button_login">Entrar</a>
+      </form>
+
+    </div>
+  </div>
+
+  <div id="div_aguardar" class="loading-div">
+    <img style="height: 50px;"
+      src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" id="loading-gif">
+  </div>
+  </div>
+  <div style="margin-left: 73.5%; color: white;" id="div_erros_login">
+  </div>
+
+  <footer>
+    <div class="ul_list">
+      <div class="line_footer">
+        <h3>Conteúdo</h3>
+        <ul class="footer_link">
+          <li><a href="">Títulos</a></li>
+          <li><a href="">Idioma</a></li>
+          <li><a href="">Legendas</a></li>
+          <li><a href="">Audiodescrição</a></li>
+        </ul>
+      </div>
+
+      <div class="line_footer">
+        <h3>Nossos Dados</h3>
+        <ul class="footer_link">
+          <li><a href="">Informações</a></li>
+          <li><a href="">Contrato de Assinatura</a></li>
+          <li><a href="">Proteção de dados</a></li>
+          <li><a href="">Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="line_footer">
+        <h3>Maze</h3>
+        <ul class="footer_link">
+          <li><a href="">Sobre Nós</a></li>
+          <li><a href="">Contate-Nos</a></li>
+          <li><a href="">Cookies</a></li>
+          <li><a href="">Segurança</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer_division"></div>
+    <div class="footer_copyright">
+      <div><span>Copyright © 2021 Todos os direitos reservados pela Maze.</span></div>
+
+      <div class="copyright_icons">
+        <a href=""><img src="./css/Images/icons/google.png" alt=""></a>
+        <a href=""><img src="./css/Images/icons/linkedin.png" alt=""></a>
+        <a href=""><img src="./css/Images/icons/facebook.png" alt=""></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+<script src="./js/intro_text.js"></script>
+<script src="./js/funcoes.js"></script>
+<script src="./js/Caljs.js"></script>
+<script>
+  
+  function limparFormulario() {
+    document.getElementById("form_login").reset();
+  }
+
+  function entrar() {
+    aguardar();
+
+    var emailVar = email_login.value;
+    var senhaVar = senha_login.value;
+
+    // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+    if (emailVar == "" || senhaVar == "") {
+      window.alert("Preencha todos os campos para prosseguir!");
+      finalizarAguardar();
+      return false;
+    }
+
+    if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+      window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+      finalizarAguardar();
+    }
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: emailVar,
+        senha: senhaVar,
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+
+          sessionStorage.EMAIL_USUARIO = json.email;
+          sessionStorage.NOME_USUARIO = json.nome;
+          sessionStorage.ID_USUARIO = json.idUsuario;
+
+          setTimeout(function () {
+            window.location = "./linhas.html";
+          }, 1000); // apenas para exibir o loading
+
+        });
+
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+          console.error(texto);
+          finalizarAguardar(texto);
+        });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
+</script>

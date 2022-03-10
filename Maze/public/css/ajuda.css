@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/******        SEGUNDA OPÇÃO DE FONTE                     **************/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root
+{--bg-color: #202124;
+--bg-color-lighter: #3B3D3F;
+--white-color: #FFF;
+--green-strong: #4ADAA8;
+--text-color-secondary: #2ED49A;
+}
+*{
+  font-family: 'Spartan', sans-serif;
+}
+body{
+  background: var(--bg-color);
+  margin: 0;
+  padding: 0;
+
+}
+iframe{
+    margin-top: 2%;
+    height: 80vh;
+    width: 80vw;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

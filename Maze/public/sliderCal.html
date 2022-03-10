@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body {
+    background: #202124 ;
+    font-family: Helvetica, Arial;
+}
+
+.container {
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.range {
+  display: flex;
+  width: 600px;
+}
+
+.range__slider {
+  width: 45%;
+}
+
+.range__value {
+  width: 35%;
+  margin-left: 45px;    
+  text-align: center;
+  border-left: #e6e4e4 1px solid;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+
+.form-group label {
+  text-transform: uppercase;
+  font-size: .7rem;
+  color: #4ADAA8;
+  margin-bottom: 5px;
+}
+
+.form-group span {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #4ADAA8;
+}
+
+.range__slider label {
+  margin-bottom: 10px;
+}
+
+.range__slider [type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 13px;
+  border-radius: 6px;
+  background: #f1f1f1;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* custom thumb */
+.range__slider [type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4ADAA8;
+  border: #f9ca24 5px solid;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+
+.range__slider [type="range"]::-webkit-slider-thumb:hover {
+  background: #f0932b;
+}
+
+.range__slider [type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #f0932b;
+  border: #f9ca24 5px solid; cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+
+.range__slider [type="range"]::-moz-range-thumb:hover {
+  background: #f9ca24;
+}
+
+/* remove border */
+input::-moz-focus-inner, input::-moz-focus-outer {
+  border: 0;
+}
+</style>
+<body>
+    <div class="container">
+  <form class="range">
+    <div class="form-group range__slider">
+      <input type="range" step="500">
+    </div><!--/form-group-->
+    <div class="form-group range__value">
+      <label>Dinheiros</label>
+      <span></span>            
+    </div><!--/form-group-->
+  </form>
+</div><!--/container-->
+</body>
+</html>
+<script>
+    
+class Slider {
+  constructor (rangeElement, valueElement, options) {
+    this.rangeElement = rangeElement
+    this.valueElement = valueElement
+    this.options = options
+
+    // Attach a listener to "change" event
+    this.rangeElement.addEventListener('input', this.updateSlider.bind(this))
+  }
+
+  // Initialize the slider
+  init() {
+    this.rangeElement.setAttribute('min', options.min)
+    this.rangeElement.setAttribute('max', options.max)
+    this.rangeElement.value = options.cur
+
+    this.updateSlider()
+  }
+
+  // Format the money
+  asMoney(value) {
+    return '$' + parseFloat(value)
+      .toLocaleString('en-US', { maximumFractionDigits: 2 })
+  }
+
+  generateBackground(rangeElement) {   
+    if (this.rangeElement.value === this.options.min) {
+      return
+    }
+
+    
+    let percentage =  (this.rangeElement.value - this.options.min) / (this.options.max - this.options.min) * 100
+    //  AQUI MUDA A COR DA BARRA QUE COMPLETA, A BARRA ROXA ATRÁS DA BOLINHA UIUI
+    return 'background: linear-gradient(to right, #50299c, #7a00ff ' + percentage + '%, #d3edff ' + percentage + '%, #dee1e2 100%)'
+  }
+
+  updateSlider (newValue) {
+    this.valueElement.innerHTML = this.asMoney(this.rangeElement.value)
+    this.rangeElement.style = this.generateBackground(this.rangeElement.value)
+  }
+}
+
+let rangeElement = document.querySelector('.range [type="range"]')
+let valueElement = document.querySelector('.range .range__value span') 
+
+let options = {
+  min: 2000,
+  max: 75000,
+  cur: 37500
+}
+
+if (rangeElement) {
+  let slider = new Slider(rangeElement, valueElement, options)
+
+  slider.init()
+}
+</script>

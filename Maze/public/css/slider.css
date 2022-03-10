@@ -1,0 +1,188 @@
+
+
+/* FONTE */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+:root
+{--bg-color: #202124;
+--bg-color-lighter: #3B3D3F;
+--white-color: #FFF;
+--green-strong: #4ADAA8;
+--text-color-secondary: #69B99D;
+}
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+
+.button_login{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 3%;
+  margin-top: 32px;
+  background-color: var(--bg-color-lighter);
+  color: var(--white-color);
+  border-radius: 5px;
+  border: 0;
+  width: 20%;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .8s;
+}
+
+.button_login:hover{
+  background-color: var(--green-strong);
+  color: var(--bg-color);
+}
+
+.heatmap {
+  height: 300px;
+  width: 620px;
+  background-image: url('./Images/Estacoes/planta_metro.png');
+  background-size: cover;
+}
+
+.heatmap_se {
+  height: 400px;
+  width: 820px;
+  background-image: url('./Images/heatmaps/planta_se.png');
+  background-size: cover;
+}
+  /* .heatmap img{
+   height:100% ; 
+  } */
+  
+  .txt_heat {
+    font-size: 22px;
+    margin-bottom: 5%;
+  }
+  
+  
+  .container {
+    margin-top: 10%;
+    padding: 1%;
+    margin-left: 4%;
+    height: 170px;
+    width: 44%;
+    border-radius: 4px;
+  }
+  .multi-range {
+    width: 100%;
+    height: 45px;
+    position: relative;
+    margin-bottom: 5%;
+  }
+  .multi-range__track {
+    height: 10px;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+  
+  /* A cor da linha quando não ta selecionada, logo abaixo tem o verde ali
+  esse verde mostra entre as duas palhetas, para trás deixa um branco que não ta selecionado
+  esse branco é isso */
+  .multi-range__track-bg {
+    height: 100%;
+    width: 95%;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 2.5%;
+  }
+  
+  /* As linhas pequnas do meio tlg */
+  .multi-range__fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #4ADAA8 3%, #26ba86 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Os terecuteco que indica de qual hora a tal hora */
+  .multi-range__handle {
+    height: 100%;
+    width: 5%;
+    background: #343434;
+    position: absolute;
+    top: 50%;
+    cursor: -webkit-grab;
+    cursor: grab;
+    transform: translateY(-50%);
+    border-radius: 4px;
+  }
+  
+  .multi-range__handle:focus:first-child {
+    border: 3px solid #1e9068;
+  }
+  
+  .multi-range__handle:focus:last-child {
+    border: 3px solid #1e9068;
+  }
+  
+  
+  /* Essa é a barra toda, menos as palhetas */
+  .multi-range__ticks {
+    height: 100%;
+    width: 95%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+  
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .multi-range__tick {
+    width: 2px;
+    height: 100%;
+    background: #fff;
+  }
+  
+  /* Os textos com as horas, 4 am 5 am etc */
+  .multi-range__labels {
+    font-size: 12px;
+    padding-top: 2%;
+    color: white;
+    position: absolute;
+    min-width: 100%;
+    overflow: visible;
+    top: calc(100% + 0.5em);
+  }
+  
+  .multi-range__labels > .label {
+    position: absolute;
+    display: none;
+  }
+  
+  @media screen and (max-width: 709px) {
+    .multi-range__labels > .label:nth-child(4n + 1) {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 710px) {
+    .multi-range__labels > .label:nth-child(odd) {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 1560px) {
+    .multi-range__labels > .label {
+      display: block;
+    }
+  }
+  
+  
+  .horasResult{
+    padding-top: 5%;
+    color: white;
+  }

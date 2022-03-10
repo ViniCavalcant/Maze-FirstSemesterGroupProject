@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/cardBuy.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Pagamento</title>
+</head>
+
+<body onload="validarSessao()">
+    <div class="containerAll">
+        <div class="pricing-plan">
+            <img src="./css/Images/plans/train_02.png" alt="" class="pricing-img">
+            <h2 class="pricing-header">Plano - 02</h2>
+            <ul class="pricing-features">
+              <li class="pricing-features-item">Propagandas durante fluxo Médio.</li>
+              <li class="pricing-features-item">Melhor custo benefício dentre os planos.</li>
+            </ul>
+            <span class="pricing-price">R$ 2999,99</span>
+            <a href="./plans.html" style="margin-left: 8px;" class="pricing-button">Escolher outro plano</a>
+          </div>
+    <div class="addjust">
+      <div id="card-success" class="hidden">
+        <i class="fa fa-check"></i>
+        <p>Payment Successful!</p>
+      </div>
+    
+      <div id="form-container">
+        <div  id="card-front">
+          <div id="shadow"></div>
+          <div id="image-container">
+            <span id="amount">Plano de fluxo baixo: <span class="price"> R$1.999,99</span></span>
+            <span id="card-image">
+            
+              </span>
+          </div>
+          <!--- end card image container --->
+      
+          <label for="card-number">
+              Número cartão:
+            </label>
+          <input type="text" id="card-number" placeholder="1234 5678 9101 1112" length="16">
+          <div id="cardholder-container">
+            <label for="card-holder">Nome no cartão:</label>
+            <input type="text" id="card-holder" placeholder="Ex: Fulano Silva" />
+          </div>
+          <!--- end card holder container --->
+          <div id="exp-container">
+            <label for="card-exp">
+                Expiração:
+              </label>
+            <input id="card-month" type="text" placeholder="MM" length="2">
+            <input id="card-year" type="text" placeholder="YY" length="2">
+          </div>
+              <div id="cvc-container">
+            <label for="card-cvc"> CVC/CVV</label>
+            <input id="card-cvc" placeholder="XXX-X" type="text" min-length="3" max-length="4">
+      
+          </div>
+          <!--- end CVC container --->
+          <!--- end exp container --->
+        </div>
+        <!--- end card front --->
+        <div id="card-back">
+          <div id="card-stripe">
+          </div>
+      
+        </div>
+        <!--- end card back --->
+        <input type="text" id="card-token" />
+        <button type="button" id="card-btn">Confirmar</button>
+      
+      </div>
+    </div>
+      <!--- end form container --->
+    </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+      <script src="https://use.fontawesome.com/f1e0bf0cbc.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+
+Stripe.setPublishableKey('pk_test_9D43kM3d2vEHZYzPzwAblYXl');
+
+var cardNumber, cardMonth, cardYear, cardCVC, cardHolder;
+
+// check for any empty inputs
+function findEmpty() {
+    var emptyText = $('#form-container input').filter(function () {
+
+        return $(this).val == null;
+    });
+
+    // add invalid class to empty inputs
+    console.log(emptyText.prevObject);
+    emptyText.prevObject.addClass('invalid');
+}
+
+
+
+
+// check card type on card number input blur 
+$('#card-number').blur(function (event) {
+    event.preventDefault();
+    checkCardType();
+});
+
+// on button click: 
+$('#card-btn').click(function (event) {
+
+    // get each input value and use Stripe to determine whether they are valid
+    var cardNumber = $('#card-number').val();
+    var isValidNo = Stripe.card.validateCardNumber(cardNumber);
+    var expMonth = $('#card-month').val();
+    var expYear = $('#card-year').val();
+    var isValidExpiry = Stripe.card.validateExpiry(expMonth, expYear);
+    var cardCVC = $('#card-cvc').val();
+    var isValidCVC = Stripe.card.validateCVC(cardCVC);
+    var cardHolder = $('#card-holder').val();
+    event.preventDefault();
+
+    // alert the user if any fields are missing
+    if (!cardNumber || !cardCVC || !cardHolder || !expMonth || !expYear) {
+        console.log(cardNumber + cardCVC + cardHolder + cardMonth + cardYear);
+        $('#form-errors').addClass('hidden');
+        $('#card-success').addClass('hidden');
+        $('#form-errors').removeClass('hidden');
+        $('#card-error').text('Please complete all fields.');
+        findEmpty();
+        
+    } else {
+        $('#card-success').removeClass('hidden')
+    }
+})
+
+});
+
+</script>

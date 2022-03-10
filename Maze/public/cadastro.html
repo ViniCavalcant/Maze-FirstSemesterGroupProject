@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./css/Images/ico_maze.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/cadastro.css">
+  <link rel="stylesheet" href="./css/Nav&footer.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar</title>
+  <script src="./js/funcoes.js"></script>
+</head>
+
+<body>
+  <div  class="contNav">
+    <div class="navbar">
+      <div class="nav">
+        <a href="./index.html">
+        <h1 class="navh1">Maze</h1>
+      </a>
+        <div class="menu">
+          <li><a href="#">Login</a></li>
+          <li><a href="./sobreUs.html">Sobre nós</a></li>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<div id="form_login">
+    <h3>Cadastre-se</h3>
+    <label for="in_email">Email</label>
+    <input  maxlength="30" id="in_email" type="text" placeholder="Email">
+    <label for="in_nome">Nome</label>
+    <input maxlength="30" id="in_nome" type="text" placeholder="Nome Empresa">
+    <label for="in_cnpj">CNPJ</label>
+    <input maxlength="10" id="in_cnpj" placeholder="CNPJ">
+    <label for="in_senha">Senha</label>
+    <input maxlength="8" id="in_senha" type="password" placeholder="Senha">
+    <label for="in_senha_confirm">Confirme a senha</label>
+    <input maxlength="8" id="in_senha_confirm" type="password" placeholder="Confirme a senha">
+    <button style="color: black;" onclick="cadastrar()" id="bota_cad">Cadastrar</button>
+</div>
+<div id="div_aguardar" class="loading-div">
+    <img style="height: 30px;"
+      src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" id="loading-gif">
+  </div>
+  
+</body>
+
+</html>
+
+
+<script>
+  function limparFormulario() {
+    document.getElementById("form_login").reset();
+  }
+
+  function cadastrar() {
+    aguardar();
+
+    var nomeVar = in_nome.value;
+    var emailVar = in_email.value;
+    var cnpjVar = in_cnpj.value;
+    var senhaVar = in_senha.value;
+    var confirmacaoSenhaVar = in_senha_confirm.value;
+
+    // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+    if (nomeVar == "" || emailVar == "" || cnpjVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+
+      window.alert("Preencha todos os campos para prosseguir!");
+      if (nomeVar == "") {
+        console.log('nome está em branco')
+      }
+      if (emailVar == "") {
+        console.log('email está em branco')
+      }
+
+      if (cnpjVar == "") {
+        console.log('cnpj está em branco');
+      }
+      if (senhaVar == "") {
+        console.log('senha está em branco')
+      }
+      if (confirmacaoSenhaVar == "") {
+        console.log('confirmacaoSenha está em branco')
+      }
+      finalizarAguardar();
+      return false;
+    }
+
+    if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+      window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+      finalizarAguardar();
+      return false;
+    }
+
+    if (senhaVar != confirmacaoSenhaVar) {
+      window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+      finalizarAguardar();
+      return false;
+    }
+
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        nome: nomeVar,
+        cnpj: cnpjVar,
+        email: emailVar,
+        senha: senhaVar,
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        window.alert("Cadastro realizado com sucesso!");
+        window.location = "index.html";
+        limparFormulario();
+        finalizarAguardar();
+      } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+      finalizarAguardar();
+    });
+  }
+</script>

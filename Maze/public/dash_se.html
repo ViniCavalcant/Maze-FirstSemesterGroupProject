@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/Nav&footer.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+</head>
+<body onload="validarSessao()">
+  
+   <nav class="main-menu">
+
+        <ul>
+           <li>
+                <a href="./index.html">
+                    <i  class='bx bxs-square'></i>
+                    <span style="font-size: 20px; font-weight: bold;" class="nav-text">
+                       MAZE
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="./linhas.html">
+                    <i class='bx bx-grid-horizontal'></i>
+                    <span class="nav-text">
+                       Estações
+                    </span>
+                </a>
+              
+            </li>
+     
+           
+            <li>
+                <a href="./ajuda.html">
+                    <i class='bx bx-help-circle' ></i>
+                    <span class="nav-text">
+                       Ajuda
+                    </span>
+                </a>
+              
+            </li>
+            
+            <li>
+              <a onclick="sair()" href="./index.html">
+               <i  class='bx bx-log-out'></i>
+                   <span class="nav-text">
+                       Logout
+                   </span>
+               </a>
+           </li>  
+              <li>
+                <details class="nav-text">
+           <summary>Estações</summary> <br>
+           <div class="scrollTeste">
+            <a class="a_line_linha_azul" href="./dash_tucuruvi.html">
+              <div class="blue_line">Tucuruvi</div>
+            </a>
+             <a class="a_line_linha_azul" href="#">
+               <div class="blue_line" >Parada Inglesa</div>
+             </a>
+             <a class="a_line_linha_azul" href="#">
+               <div class="blue_line">Jardim São Paulo</div>
+             </a>
+             <a class="a_line_linha_azul" href="">
+               <div class="blue_line">Santana</div>
+             </a>
+             <a class="a_line_linha_azul" href="">
+               <div class="blue_line">Carandiru</div>
+             </a>
+             <a class="a_line_linha_azul" href="">
+               <div class="blue_line">Portuguesa-Tietê</div>
+             </a>
+             <a class="a_line_linha_azul" href="">
+               <div class="blue_line">Armênia</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Tiradentes</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Luz</div>
+             </a>
+             <a class="a_line_linha_azul" href="">
+               <div class="blue_line">São Bento</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dash_se.html">
+               <div class="blue_line">Sé</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Liberdade</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">São Joaquim</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Vergueiro</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Paraiso</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Ana Rosa</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Vila Mariana</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Santa Cruz</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Praça da Árvore</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Saúde</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">São Judas</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Conceição</div>
+             </a>
+             <a class="a_line_linha_azul" href="./dashboard.html">
+               <div class="blue_line">Jabaquara</div>
+             </a>
+           </div>
+         </details>
+             
+           </li>
+           
+        </ul>
+
+         
+        
+    </nav>
+
+    <h1 style="margin-left: 16.5%; margin-top: 2%; margin-bottom: 2%;">Sé</h1>
+    <div class="containerCard">
+    <div class="options">
+
+
+      <div class="card">
+        <div class="title">
+          <h4>Estação mais movimentada</h4>
+        </div>
+        <div class="result">
+          <h1>Jabaquara</h1>
+        </div>
+        <div  class="total">
+          <h4></h4>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="title">
+          <h4>Estação menos movimentada</h4>
+        </div>
+        <div class="result">
+          <h1>Conceição</h1>
+        </div>
+        <div class="total">
+     
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="title">
+          <h3>Pico de pessoas</h3>
+        </div>
+        <div class="result">
+          <h1>3 Milhões</h1>
+        </div>
+        <div id="pico_pessoas" class="total">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">
+          <h3>Horário pico</h3>
+        </div>
+        <div class="result">
+          <h1>17:20</h1>
+        </div>
+        <div class="total">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">
+          <h4>Horário menos movimentado</h4>
+        </div>
+        <div class="result">
+          <h1>14:30</h1>
+        </div>
+        <div class="total">
+        </div>
+      </div>
+  
+
+    </div>
+   </div>
+   <div style="margin-left: 3%;"  class="dash_space_four">
+ 
+          <div class="graphs_four" id='grafico_1'>
+            <h3 id="destaque">Volume Anual</h3>
+            <canvas id="chart" > </canvas>
+       
+      </div>
+
+      <div  class="graphs_four" id='grafico_2'>
+        <h3 id="destaque_2">Volume Mensal</h3>
+        <canvas id="chart_2" > </canvas>
+      </div>
+
+
+  <div class="graphs_four" id='grafico_3'>
+    <h3 id="destaque_3">Volume Diário</h3>
+    <canvas id="chart_3" > </canvas>
+  </div>
+
+
+            <!-- <h1 class="txt_heat">Selecione os horários que deseja vizualisar</h1>
+            <div class="multi-range"></div>
+            <h2 class="horasResult"><span class="start-hour"></span > <span style="color: white;">-</span>  <span class="end-hour"></span></h2>
+            
+          </div> -->
+        </div>
+          <div style="margin-left: 20%;" class="graphs_four" id='grafico_2'>
+            <h3 id="destaque_2">Mapa de calor</h3>
+            <div class="heatmap_se"></div>
+            
+            <form id="heatmap_form">
+              <input
+              id="hora_ini"
+              type="time"
+              name="hora_ini"
+              min="04:30"
+              max="23:59"
+              required
+              />
+              <input
+              id="hora_fim"
+              type="time"
+              name="hora_fim"
+              min="00:00"
+              max="23:59"
+              required
+              />
+              <button class="button_login" type="submit" onclick="buscarPresencas()">Buscar</button>
+            </form>
+          </div>
+  <!-- MAIN JS -->
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+  <script src="./js/dashboard.js"></script>
+  <script src="./js/funcoes.js"></script>
+  <script src="./js/dashboards_azul.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/heatmap.js"></script>
+
+  <span onclick="obterDadosGrafico(100)"></span>
+</body>
+</html>
+
+<script> 
+let proximaAtualizacao;
+  var context = document.getElementById("chart").getContext("2d");
+    var configuration = {
+    type: 'line ',
+    data: {
+      labels: ["Nov", "Dez",'Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out'],
+      datasets: [{
+        label: ["Volume de pessoas"],
+        data: ["19440000", "1380000"],
+        type: 'line',
+        borderColor: ['#6E95F9'],
+        backgroundColor: ['#6E95F90b'],
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          barPercentage: .7,
+          distribution: 'series',
+          ticks: {
+            beginAtZero: false,
+            fontColor: "#4ADAA8",
+            drawBorder: true,
+          },
+
+          gridLines: {
+            color: ["#3B3D3F", "#3B3D3F",  "#3B3D3F",  "#3B3D3F",  "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D"],
+          },
+      
+
+        }],
+        yAxes: [{
+          gridLines: {
+            color: ["#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8","#4ADAA8","#4ADAA8","#4ADAA8", "#4ADAA8",],
+          },
+          scaleLabel: {
+            fontColor: "#4ADAA8",
+            display: true,
+            labelString: 'Número de pesssoas',
+          
+          }
+        }],
+
+      },
+    }
+  };
+
+    var chart = new Chart(context, configuration);
+
+    // DIAS DO MES DIA 1, 2, 3 ETC
+    var context_2 = document.getElementById("chart_2").getContext("2d");
+
+    var configuration_2 = {
+    type: 'bar',
+    data: {
+      labels: ["01", "02", "03"],
+       datasets: [{
+        label: ["Volume de pessoas"],
+        data: ["28000", "34000",''],
+        type: 'bar',
+        borderColor: ['#00f01f'],
+        backgroundColor: ['#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f', '#00f01f'],
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          barPercentage: .7,
+          distribution: 'series',
+          ticks: {
+            beginAtZero: true,
+            fontColor: "#4ADAA8",
+            drawBorder: true,
+          },
+
+          gridLines: {
+            color: ["#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D", "#2B2C2D"],
+          },
+  
+
+        }],
+        yAxes: [{
+          gridLines: {
+            color: ["#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8", "#4ADAA8",  "#FFF"],
+      },
+          scaleLabel: {
+            fontColor: "#4ADAA8",
+            display: true,
+            labelString: 'Número de pesssoas',
+          }
+        }],
+
+      },
+    }
+  };
+
+  var chart_2 = new Chart(context_2, configuration_2);
+
+  obterDadosGrafico(100)
+
+  function obterDadosGrafico(idAquario) {
+    if (proximaAtualizacao != undefined) {
+      clearTimeout(proximaAtualizacao);
+    }
+
+    fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          plotarGrafico(resposta, idAquario);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  }
+
+  function plotarGrafico(resposta, idAquario) {
+    console.log('iniciando plotagem do gráfico...');
+
+    var dados = {
+      labels: [],
+      datasets: [
+        {
+
+          label: 'Presença',
+          borderColor: '#00f01f',
+          backgroundColor: ['1', '2', '3', '4', '5', '6', '7'],
+          fill: true,
+          data: []
+        }
+      ]
+    };
+
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+
+      const d = new Date(registro.date_moviment);
+      let hour = d.getHours();
+      console.log(hour)
+
+                   
+      dados.labels.push(`${hour}:00`);
+      dados.datasets[0].data.push(registro.resultado);
+      
+    }
+
+    console.log(JSON.stringify(dados));
+
+    var context_3 = chart_3.getContext("2d");
+    window.grafico_linha = Chart.Bar(context_3, {
+      data: dados,
+      //Configurações do gráfico
+      options: {
+        responsive: true,
+        animation: { duration: 500 },
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+          display: true,
+          text: 'Histórico recente de presença'
+        },
+        scales: {
+          yAxes: [{
+            type: 'linear',
+            display: true,
+            position: 'left',
+            id: 'y-temperatura',
+          }, {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            id: 'y-umidade',
+
+            gridLines: {
+              drawOnChartArea: false,
+            },
+          }],
+        }
+      }
+    });
+
+    //Atualiza os dados de 2 em 2 segundos
+    setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+  }
+  var i1 = ""
+  var i2 = ""
+  var i3 = ""
+  var i4 = ""
+  var i5 = ""
+  var i6 = ""
+  var i7 = ""
+  var i8 = ""
+  var i9 = ""
+  var i10 = ""
+  var i11 = ""
+  var i12 = ""
+  var i13 = ""
+  var i14 = ""
+  var i15 = ""
+  var i16 = ""
+  var i17 = ""
+  var i18 = ""
+  var i19 = ""
+  var i20 = ""
+  var i21 = ""
+  var i22 = ""
+  var i23 = ""
+  // só mexer se quiser alterar o tempo de atualização
+  // ou se souber o que está fazendo!
+
+  // só mexer se quiser alterar o tempo de atualização
+  // ou se souber o que está fazendo!
+  function atualizarGrafico(idAquario, dados) {
+    fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+          console.log(`Dados atuais do gráfico: ${dados}`);
+
+          // tirando e colocando valores no gráfico
+          dados.labels.shift(); // apagar o primeiro
+          const d = new Date(novoRegistro[0].date_moviment);
+          let hour = d.getHours();
+          
+         console.log(hour)
+
+                   
+        
+          dados.labels.push(`${hour}:00`); // incluir um novo momento
+          dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+          dados.datasets[0].data.push(novoRegistro[0].is_present * 25); // incluir uma nova medida de umidade
+
+          dados.datasets[0].backgroundColor[22] = i1
+          dados.datasets[0].backgroundColor[21] = i2
+          dados.datasets[0].backgroundColor[20] = i3
+          dados.datasets[0].backgroundColor[19] = i4
+          dados.datasets[0].backgroundColor[18] = i5
+          dados.datasets[0].backgroundColor[17] = i6
+          dados.datasets[0].backgroundColor[16] = i7
+          dados.datasets[0].backgroundColor[15] = i8
+          dados.datasets[0].backgroundColor[14] = i9
+          dados.datasets[0].backgroundColor[13] = i10
+          dados.datasets[0].backgroundColor[12] = i11
+          dados.datasets[0].backgroundColor[11] = i12
+          dados.datasets[0].backgroundColor[10] = i13
+          dados.datasets[0].backgroundColor[9] = i14
+          dados.datasets[0].backgroundColor[8] = i15
+          dados.datasets[0].backgroundColor[7] = i16
+          dados.datasets[0].backgroundColor[6] = i17
+          dados.datasets[0].backgroundColor[5] = i18
+          dados.datasets[0].backgroundColor[4] = i19
+          dados.datasets[0].backgroundColor[3] = i20
+          dados.datasets[0].backgroundColor[2] = i21
+          dados.datasets[0].backgroundColor[1] = i22
+          dados.datasets[0].backgroundColor[0] = i23
+
+          i23 = i22
+          i22 = i21
+          i21 = i20
+          i20 = i19
+          i19 = i18
+          i18 = i17
+          i17 = i16
+          i16 = i15
+          i15 = i14
+          i14 = i13
+          i13 = i12
+          i12 = i11
+          i11 = i10
+          i10 = i9
+          i9 = i8
+          i8 = i7
+          i7 = i6
+          i6 = i5
+          i5 = i4
+          i4 = i3
+          i3 = i2
+          i2 = i1
+          if (novoRegistro[0].is_present > 300) {
+            i1 = "#118547"
+            dados.datasets[0].backgroundColor[23] = i1
+          } else if (novoRegistro[0].is_present > 250) {
+            i1 = "#00f01f"
+            dados.datasets[0].backgroundColor[23] = i1
+          } else if (novoRegistro[0].is_present > 200) {
+            i1 = "#eef414"
+            dados.datasets[0].backgroundColor[23] = i1
+          }
+          else if (novoRegistro[0].is_present > 150) {
+            i1 = "#FFA500"
+            dados.datasets[0].backgroundColor[23] = i1
+          }
+          else {
+            i1 = "#d3000d"
+            dados.datasets[0].backgroundColor[23] = i1
+          }
+
+          window.grafico_linha.update();
+
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 5000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 5000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  }
+  
+
+
+  function buscarPresencas() {
+    var hora_iniVar = hora_ini.value;
+    var hora_fimVar = hora_fim.value;
+
+    var formulario = new URLSearchParams(new FormData(heatmap_form));
+    fetch('medidas/presenca-hora', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        hora_ini: hora_iniVar,
+        hora_fim: hora_fimVar
+      })
+    }).then(resultado => {
+      if (resultado.ok) {
+        resultado.json().then(json => {
+          console.log('JSON AQUI', json);
+              // Configuração mínima, container padrão
+var heatmapInstance = h337.create({
+            container: document.querySelector('.heatmap_se')
+          });
+
+          var points = [];
+          var max = 100;
+          var min = 0;
+          var width = 820;
+          var height = 320;
+          
+          //Gerando um ponto por local da planta
+          var local1 = { x: 40, y: 125, value: json[0].total , radius: 30 };
+          var local2 = { x: 40, y:160, value: json[1].total, radius: 30 };
+          var local3 = { x: 40, y: 215, value: json[2].total , radius: 30 };
+          var local4 = { x: 40, y: 250, value:json[3].total , radius: 30 };
+          var local5 = { x: 130, y: 45, value: json[4].total , radius: 65 };
+          var local6 = { x: 200, y: 40, value: json[5].total , radius: 65 };
+          var local7 = { x: 330, y: 40, value: json[6].total , radius: 65 };
+          var local8 = { x: 420, y: 45, value: json[7].total , radius: 65 };
+          var local9 = { x: 500, y: 40, value: json[8].total , radius: 65 };
+          var local10 = { x: 600, y: 40, value: json[9].total, radius: 65 };
+          var local11 = { x: 130, y: 370, value: json[10].total, radius: 65 };
+          var local12 = { x: 200, y: 360, value: json[11].total, radius: 65 };
+          var local13 = { x: 330, y: 360, value: json[12].total, radius: 65 };
+          var local14 = { x: 420, y: 370, value: json[13].total, radius: 65 };
+          var local15 = { x: 500, y: 370, value: json[14].total, radius: 65 };
+          var local16 = { x: 600, y: 370, value: json[15].total, radius: 65 };
+          var local17 = { x: 775, y: 125, value: json[16].total, radius: 30 };
+          var local18 = { x: 775, y: 160, value: json[17].total, radius: 30 };
+          var local19 = { x: 775, y: 220, value: json[18].total, radius: 30 };
+          var local20 = { x: 775, y: 265, value: json[19].total, radius: 30 };
+          var local21 = { x: 550, y: 210, value: json[20].total, radius: 80 };
+          var local22 = { x:  200, y: 250, value: json[21].total, radius: 92 };
+          var local23 = { x:  220, y: 129, value: json[22].total, radius: 70 };
+
+          console.log('escada 1:', local1);
+          console.log('escada 2:', local2);
+          console.log('escada 3:', local3);
+          console.log('escada 4:', local4);
+          console.log('trem porta 1:', local5);
+          console.log('trem porta 2:', local6);
+          console.log('trem porta 3:', local7);
+          console.log('trem porta 4:', local8);
+          console.log('trem porta 5:', local9);
+          console.log('trem porta 6:', local10);
+          console.log('trem porta 7:', local11);
+          console.log('trem porta 8:', local12);
+          console.log('trem porta 9:', local13);
+          console.log('trem porta 10:', local14);
+          console.log('trem porta 11:', local15);
+          console.log('trem porta 12:', local16);
+          console.log('escada 5:', local17);
+          console.log('escada 6:', local18);
+          console.log('escada 7:', local19);
+          console.log('escada 8:', local20);
+          console.log('proximidade visão:', local21);
+          console.log('proximidade anúncio de cima:', local22);
+          console.log('proximidade anúncio de baixo:', local23);
+
+          points = points.concat(
+            local1,
+            local2,
+            local3,
+            local4,
+            local5,
+            local6,
+            local7,
+            local8,
+            local9,
+            local10,
+            local11,
+            local12,
+            local13,
+            local14,
+            local15,
+            local16,
+            local17,
+            local18,
+            local19,
+            local20,
+            local21,
+            local22,
+            local23
+          );
+
+          //formato para gerar mapa
+          var data = {
+            max: max,
+            min: min,
+            data: points
+          };
+
+          //inicia pontos no mapa de calor
+          heatmapInstance.setData(data);
+          // heatmapInstance.addData({ x: 10, y: 10, value: 100})
+
+        });
+      } else {
+        console.log('Erro ao buscar quantidade de presença!');
+
+        // response.text().then((texto) => {
+        //     console.error(texto);
+        // })
+      }
+    });
+    return false;
+  }
+
+
+  </script>
